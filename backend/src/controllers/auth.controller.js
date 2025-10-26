@@ -62,7 +62,7 @@ export const signup = async (req, res) => {
     }
   } catch (error) {
     console.error(`Error in signup controller: ${error}`);
-    res.status(500).status({ message: "Internal server error" });
+    res.status(500).json({ message: "Internal server error" });
   }
 };
 
@@ -115,7 +115,7 @@ export const updateProfile = async (req, res) => {
       userId,
       { profilePic: uploadResponse.secure_url },
       { new: true }
-    );
+    ).select("-password");
 
     res.status(200).json(updatedUser);
   } catch (error) {
