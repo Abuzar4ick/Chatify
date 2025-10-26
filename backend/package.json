@@ -13,6 +13,7 @@
   "dependencies": {
     "bcrypt": "^6.0.0",
     "chat-app": "file:..",
+    "cloudinary": "^2.5.1",
     "cookie-parser": "^1.4.7",
     "dotenv": "^17.2.3",
     "express": "^4.21.2",
@@ -21,8 +22,6 @@
     "resend": "^6.0.2"
   },
   "devDependencies": {
-    "jest": "^29.7.0",
-    "nodemon": "^3.1.10",
-    "supertest": "^6.3.3"
+    "nodemon": "^3.1.10"
   }
 }
