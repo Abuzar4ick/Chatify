@@ -20,7 +20,6 @@ function SignUpPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     signup(formData);
   };
   return (
