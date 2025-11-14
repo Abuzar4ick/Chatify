@@ -1,13 +1,3 @@
-<<<<<<< Updated upstream
-
-function ChatPage() {
-  return (
-    <div>
-      Chat page
-    </div>
-  )
-}
-=======
 import { useChatStore } from "../store/useChatStore";
 
 import BorderAnimatedContainer from "../components/BorderAnimatedContainer";
@@ -20,7 +10,6 @@ import NoConversationPlaceholder from "../components/NoConversationPlaceholder";
 
 function ChatPage() {
   const { activeTab, selectedUser } = useChatStore();
->>>>>>> Stashed changes
 
   return (
     <div className="relative w-full max-w-6xl h-[800px]">
