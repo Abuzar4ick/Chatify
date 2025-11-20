@@ -10,7 +10,7 @@ export const useChatStore = create((set, get) => ({
   selectedUser: null,
   isUsersLoading: false,
   isMessagesLoading: false,
-  isSoundEnabled: localStorage.getItem("isSoundEnabled") === true,
+  isSoundEnabled: JSON.parse(localStorage.getItem("isSoundEnabled")) === true,
 
   toggleSound: () => {
     localStorage.setItem("isSoundEnabled", !get().isSoundEnabled);
@@ -26,7 +26,7 @@ export const useChatStore = create((set, get) => ({
       const res = await axiosInstance.get("/messages/contacts");
       set({ allContacts: res.data });
     } catch (err) {
-      toast.error(err.response.data.message);
+      toast.error(err?.response?.data.message);
     } finally {
       set({ isUsersLoading: false });
     }
@@ -37,7 +37,7 @@ export const useChatStore = create((set, get) => ({
       const res = await axiosInstance.get("/messages/chats");
       set({ chats: res.data });
     } catch (err) {
-      toast.error(err.response.data.message);
+      toast.error(err?.response?.data.message);
     } finally {
       set({ isUsersLoading: false });
     }
