@@ -8,10 +8,15 @@ const keyStrokeSounds = [
 
 function useKeyboardSound() {
   const playRandomStrokeSound = () => {
-    const randomSound = keyStrokeSounds[Math.floor() * keyStrokeSounds.length];
+    const index = Math.floor(Math.random() * keyStrokeSounds.length);
+    const randomSound = keyStrokeSounds[index];
+
+    if (!randomSound) return; // safety check
 
     randomSound.currentTime = 0;
-    randomSound.play().catch(error => console.log(`Audio play failed: ${error}`));
+    randomSound.play().catch((error) =>
+      console.log(`Audio play failed: ${error}`)
+    );
   };
 
   return { playRandomStrokeSound };
